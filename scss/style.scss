@@ -424,11 +424,6 @@ body {
 		font-size: 17px;
 		cursor: pointer;
 	}
-	&-check:disabled,
-	&-restart:disabled {
-		opacity: 0.5;
-		cursor: auto;
-	}
 	&-restart {
 		display: none;
 	}

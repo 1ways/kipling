@@ -347,18 +347,9 @@ const renderResults = () => {
 
 	results.innerHTML = content;
 };
-let resultIndex = 0;
 quiz.addEventListener("change", event => {
 	if (event.target.classList.contains("answer-input")) {
-		resultIndex += 1;
-		console.log(event.target.name);
 		localResults[event.target.name] = event.target.value;
-		if (resultIndex == event.target.name) {
-			resultIndex -= 1;
-		}
-		if (resultIndex == DATA.length) {
-			btnCheck.disabled = false;
-		}
 	}
 });
 quiz.addEventListener("click", event => {
@@ -377,7 +368,6 @@ quiz.addEventListener("click", event => {
 		btnCheck.classList.remove("btn-check--hidden");
 		btnRestart.classList.remove("btn-restart--visible");
 		renderQuestions();
-		btnCheck.disabled = true;
 	}
 });
 renderQuestions();
