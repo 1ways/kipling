@@ -275,7 +275,6 @@ const DATA = [
 ];
 
 let localResults = {};
-let resultsLength = [];
 const quiz = document.getElementById("quiz");
 const questions = document.getElementById("questions");
 const results = document.getElementById("results");
@@ -348,11 +347,16 @@ const renderResults = () => {
 
 	results.innerHTML = content;
 };
+let resultIndex = 0;
 quiz.addEventListener("change", event => {
 	if (event.target.classList.contains("answer-input")) {
-		resultsLength[event.target.name] = event.target.value;
+		resultIndex += 1;
+		console.log(event.target.name);
 		localResults[event.target.name] = event.target.value;
-		if (resultsLength.length == DATA.length) {
+		if (resultIndex == event.target.name) {
+			resultIndex -= 1;
+		}
+		if (resultIndex == DATA.length) {
 			btnCheck.disabled = false;
 		}
 	}
