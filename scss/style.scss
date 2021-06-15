@@ -330,14 +330,119 @@ body {
 }
 
 .quiz {
-	&__title {
+	padding-bottom: 20px;
+	&__header {
 		margin-bottom: 30px;
+	}
+	&__sub-title {
+		color: $blue;
+		font-size: 24px;
 	}
 	&__link {
 		font-size: 22px;
 		line-height: 20px;
 		color: $blue;
 	}
+	&__questions {
+		margin-bottom: 20px;
+	}
+	&__results {
+		display: none;
+		margin-bottom: 20px;
+	}
+}
+
+.quiz__questions-item {
+	max-width: 525px;
+	&:not(:last-child) {
+		margin-bottom: 20px;
+	}
+	&-question {
+		margin-bottom: 10px;
+		font-size: 20px;
+		line-height: 22px;
+	}
+	&-answers {
+		list-style: none;
+		li {
+			label {
+				cursor: pointer;
+				font-size: 17px;
+				color: $grey;
+				display: flex;
+				align-items: center;
+				input {
+					cursor: pointer;
+					margin: 0 10px 0 0;
+					padding: 0;
+				}
+			}
+		}
+		li:not(:last-child) {
+			margin-bottom: 10px;
+		}
+	}
+}
+
+.quiz__results-item {
+	max-width: 525px;
+	&:not(:last-child) {
+		margin-bottom: 20px;
+	}
+	&-question {
+		margin-bottom: 10px;
+		font-size: 20px;
+		line-height: 22px;
+	}
+	&-answers {
+		list-style: none;
+		li {
+			font-size: 17px;
+			color: $grey;
+		}
+		.answer--invalid {
+			font-size: 17px;
+			color: $red;
+		}
+		.answer--valid {
+			font-size: 17px;
+			color: $green;
+		}
+		li:not(:last-child) {
+			margin-bottom: 10px;
+		}
+	}
+}
+
+.btn {
+	&-check,
+	&-restart {
+		padding: 10px 20px;
+		border: none;
+		background: $blue;
+		color: $white;
+		font-size: 17px;
+		cursor: pointer;
+	}
+	&-check:disabled,
+	&-restart:disabled {
+		opacity: 0.5;
+		cursor: auto;
+	}
+	&-restart {
+		display: none;
+	}
+}
+
+.questions--hidden,
+.btn-check--hidden {
+	display: none;
+}
+.btn-restart--visible {
+	display: inline-block;
+}
+.results--visible {
+	display: block;
 }
 
 // Media
@@ -615,12 +720,18 @@ body {
 		&__title {
 			text-align: center;
 		}
+		&__sub-title {
+			text-align: center;
+		}
 		&__text {
 			width: 100%;
 			text-align: center;
 		}
 		&__link {
 			font-size: 16px;
+		}
+		&__controls {
+			text-align: center;
 		}
 	}
 }
@@ -649,6 +760,7 @@ body {
 	.quiz {
 		&__title {
 			line-height: 46px;
+			margin-bottom: 10px;
 		}
 		&__link {
 			font-size: 14px;

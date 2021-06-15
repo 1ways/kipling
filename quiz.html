@@ -67,20 +67,29 @@
 		<section class="quiz">
 			<div class="container">
 				<div class="quiz__header">
-					<h1 class="section__title quiz__title">
-						Викторина по биографии Киплинга
-					</h1>
+					<h1 class="section__title quiz__title">Викторина</h1>
+					<p class="quiz__sub-title">
+						Выбрав правильный на ваш взгляд вариант ответа, нажмите на кнопку
+						«Проверить». Если хотите пройти тест повторно , переходите по ссылке
+						«Рестарт»
+					</p>
 				</div>
 				<div class="quiz__body section__body">
-					<div class="quiz__text">
-						<a
-							class="quiz__link"
-							href="https://uchebnik.mos.ru/app_player/230713"
-							>https://uchebnik.mos.ru/app_player/230713</a
-						>
+					<div class="quiz__content" id="quiz">
+						<div class="quiz__questions" id="questions">
+							
+						</div>
+						<div class="quiz__results" id="results">
+							
+						</div>
+						<div class="quiz__controls">
+							<button class="btn-check" id="btn-check" disabled>Проверить</button>
+							<button class="btn-restart" id="btn-restart">Рестарт</button>
+						</div>
 					</div>
 				</div>
 			</div>
 		</section>
+		<script src="js/main.js"></script>
 	</body>
 </html>
